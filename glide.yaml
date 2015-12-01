@@ -1,0 +1,5 @@
+parent: null
+package: main
+import:
+- package: github.com/peterbourgon/g2s
+  version: ec76db4c1ac16400ac0e17ca9c4840e1d23da5dc
