@@ -9,7 +9,7 @@ At jobandtalent we use statsd for tracking a lot of event that happen with our s
 
 - time spent in a request. We will track the time between the requests get to the middleware until it cames back. Please, check the [lavarel documentation](https://mattstauffer.co/blog/laravel-5.0-middleware-filter-style) to see how middlewares work on Negroni.
 
-For example, a request to `/api/users` will be tracked (using jt.yourservice as prefix) with the key: `jt.yourservice.api.users`.
+  For example, a request to `/api/users` will be tracked (using jt.yourservice as prefix) with the key: `jt.yourservice.api.users`.
 
 - status codes of the responses. This stat is just a counter of the status code received and it will be tracked as: `jt.yourservice.request.200`, or `201`, etc...
 
@@ -22,8 +22,18 @@ Take care of...
 Using it
 --------
 
-    func main() {
-        statsdURI := "localhost:1234"
-        prefix := "jt.yourservice"
-        n := negroni.New(statsd.NewMiddleware(stastdURI, prefix))
-    }
+```go
+package main
+
+import (
+  "github.com/codegangsta/negroni"
+  "github.com/jobandtalent/negroni-statsd"
+)
+
+func main() {
+  statsdURI := "localhost:1234"
+  prefix := "jt.yourservice"
+  n := negroni.New(negronistatsd.NewMiddleware(statsdURI, prefix))
+  ...
+}
+```

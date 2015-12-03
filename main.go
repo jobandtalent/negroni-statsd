@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/codegangsta/negroni"
-	g2s "github.com/peterbourgon/g2s"
+	"github.com/peterbourgon/g2s"
 )
 
 const (
