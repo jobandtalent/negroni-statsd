@@ -26,14 +26,14 @@ Using it
 package main
 
 import (
-  "github.com/codegangsta/negroni"
-  "github.com/jobandtalent/negroni-statsd"
+    "github.com/codegangsta/negroni"
+    "github.com/jobandtalent/negroni-statsd"
 )
 
 func main() {
-  statsdURI := "localhost:1234"
-  prefix := "jt.yourservice"
-  n := negroni.New(negronistatsd.NewMiddleware(statsdURI, prefix))
-  ...
+    statsdURI := "localhost:1234"
+    prefix := "jt.yourservice"
+    n := negroni.New(negronistatsd.NewMiddleware(statsdURI, prefix))
+    ...
 }
 ```
